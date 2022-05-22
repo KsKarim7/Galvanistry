@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const DisplayProducts = ({ product }) => {
     const { img, available, minimum, price, name, description } = product
-    console.log(product)
+    // console.log(product)
     return (
         <Container>
             <div class="card ml-48 my-10 card-side bg-base-100 shadow-xl">

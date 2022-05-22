@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init'
 import Loading from '../Shared/Loading/Loading';
 import { Form } from 'react-bootstrap';
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -20,9 +21,11 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateErr] = useUpdateProfile(auth);
 
-    // const [token] = useToken(user || gUser)
-    const navigate = useNavigate()
-
+    const [token] = useToken(user || gUser)
+    const navigate = useNavigate();
+    if (token) {
+        navigate('/')
+    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

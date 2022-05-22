@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
 import Loading from '../Shared/Loading/Loading';
 
 
@@ -9,6 +10,10 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
+    const [token] = useToken(user || gUser)
+    if (token) {
+        navigate('/')
+    }
 
     const [
         signInWithEmailAndPassword,
@@ -18,7 +23,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    // const [token] = useToken(user || gUser)
+
 
     const handleLogin = async e => {
         e.preventDefault();
