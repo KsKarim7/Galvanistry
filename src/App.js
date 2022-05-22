@@ -7,6 +7,8 @@ import Login from './Pages/Login/Login';
 import ScrollToTop from './Pages/Shared/ScrollToTop';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import SignUp from './Pages/Login/SignUp';
+import Checkout from './Pages/Checkout/Checkout';
+import Order from './Pages/Checkout/Order';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
+        <Route path='/product/:id' element={<Checkout />}></Route>
+        {/* <Route path='/order' element={<Order />}></Route> */}
 
         <Route path='*' element={<NotFound />}></Route>
       </Routes>

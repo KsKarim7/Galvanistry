@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const DisplayProducts = ({ product }) => {
-    const { img, available, minimum, price, name, description } = product
+    const { _id, img, available, minimum, price, name, description } = product
     // console.log(product)
+
+    const navigate = useNavigate();
+    const navigateToCheckout = id => {
+        navigate(`/product/${id}`)
+    }
     return (
         <Container>
             <div class="card ml-48 my-10 card-side bg-base-100 shadow-xl">
@@ -14,7 +20,7 @@ const DisplayProducts = ({ product }) => {
                     <p>Minimum order quantity:{minimum}</p>
                     <p>Per unit price: ${price}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Order Now</button>
+                        <button onClick={() => navigateToCheckout(_id)} class="btn btn-primary">Order Now</button>
                     </div>
                 </div>
                 <figure><img src={img} alt="" /></figure>
