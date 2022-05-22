@@ -20,22 +20,22 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div class="navbar-start hidden text-xl lg:flex">
-                    <ul class="menu menu-horizontal p-0">
-                        <li><a>Item </a></li>
+                    <ul class="menu text-white menu-horizontal p-0">
+                        <li><Link to=''>Item </Link></li>
                         <li tabindex="0">
-                            <a>
-                                Parent
-                            </a>
+                            <Link to='/dashboard'>
+                                Dashboard
+                            </Link>
                         </li>
-                        <li><a>Item </a></li>
+                        <li><Link to=''>Item </Link></li>
                     </ul>
                 </div>
             </div>
             <div>
-                <a class="btn navbar-center btn-ghost normal-case text-2xl">Galvanistry</a>
+                <Link to='/' class="btn navbar-center btn-ghost normal-case text-2xl">Galvanistry</Link>
             </div>
-            <div class="navbar-end mr-5">
-                <Link className='btn' to='/login'>Login</Link>
+            <div class="navbar-end  mr-5">
+                <Link className='btn btn-neutral' to='/login'>Login</Link>
             </div>
         </div>
     );
