@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import Loading from '../Shared/Loading/Loading';
@@ -10,10 +10,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-    const [token] = useToken(user || gUser)
-    if (token) {
-        navigate('/')
-    }
+    const location = useLocation();
 
     const [
         signInWithEmailAndPassword,
@@ -21,14 +18,16 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    let from = location.state?.from?.pathname || '/'
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user || gUser)
 
     const handleLogin = async e => {
         e.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        console.log('user logged in')
+        // console.log('user logged in')
     }
 
     const handleEmailBlur = e => {
@@ -38,6 +37,13 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true })
+        }
+    }, [token, from, navigate])
+
+
     let loginError;
     if (error || gError) {
         loginError = <p className='text-red-500'><small>{error.message || gError?.message}</small></p>
@@ -45,9 +51,9 @@ const Login = () => {
     if (loading || gLoading) {
         return <Loading></Loading>
     }
-    // if (token) {
-    //     navigate('/')
-    // }
+    if (user || gUser) {
+        navigate(from, { replace: true })
+    }
 
     return (
         <div>

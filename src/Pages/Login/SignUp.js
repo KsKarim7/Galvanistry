@@ -10,6 +10,9 @@ import useToken from '../../Hooks/useToken';
 
 
 const SignUp = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, updateErr] = useUpdateProfile(auth);
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -17,9 +20,6 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
 
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
-    const [updateProfile, updating, updateErr] = useUpdateProfile(auth);
 
     const [token] = useToken(user || gUser)
     const navigate = useNavigate();

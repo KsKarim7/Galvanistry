@@ -31,7 +31,7 @@ const Navbar = () => {
                 </div>
                 <div class="navbar-start hidden text-xl lg:flex">
                     <ul class="menu text-white menu-horizontal p-0">
-                        <li><Link to=''>Item </Link></li>
+                        <li><Link to='/portfolio'>Portfolio</Link></li>
                         {
                             user && <li tabIndex="0">
                                 <Link to='/dashboard'>
@@ -39,12 +39,12 @@ const Navbar = () => {
                                 </Link>
                             </li>
                         }
-                        <li><Link to=''>Item </Link></li>
+                        <li><Link to='/blogs'>Blogs </Link></li>
                     </ul>
                 </div>
             </div>
             <div>
-                <Link to='/' class="btn navbar-center btn-ghost normal-case text-2xl">Galvanistry</Link>
+                <Link to='/' class="btn  navbar-center btn-ghost normal-case text-4xl font-bold">Galvanistry</Link>
             </div>
             <div class="navbar-end  mr-5">
                 {
