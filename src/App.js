@@ -18,6 +18,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import Footer from './Pages/Shared/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import Users from './Pages/Dashboard/Users';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='myOrders' element={<MyOrders />}></Route>
           <Route path='users' element={<Users />}></Route>
+          <Route path='manage' element={<ManageProducts />}></Route>
         </Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>

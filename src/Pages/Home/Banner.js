@@ -12,12 +12,12 @@ const Banner = () => {
     };
     return (
         <div class="hero min-h-screen" style={style} >
-            < div class="hero-overlay bg-opacity-60" ></div >
+            < div class="hero-overlay bg-transparent" ></div >
             <div class="hero-content text-center text-neutral-content">
                 <div class="max-w-md">
                     <h1 class="mb-5 text-5xl font-bold">Welcome  to Galvanistry</h1>
-                    <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button class="btn btn-neutral">Get Started</button>
+                    <p class="mb-5 text-xl  bg-transparent"> We offer galvanometer to our clients. These precision engineered galvanometers provide effective detection of currents.</p>
+
                 </div>
             </div>
         </div >

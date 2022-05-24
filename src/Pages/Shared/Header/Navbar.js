@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div>
-                <Link to='/' class="btn navbar-center btn-ghost normal-case text-4xl font-semibold">Galvanistry</Link>
+                <Link to='/' class=" navbar-center btn btn-neutral text-indigo-200 btn-ghost normal-case text-4xl font-semibold">Galvanistry</Link>
             </div>
             <div class="navbar-end  mr-5">
                 {/* <label for="dashboard-sidebar" class="btn btn-neutral drawer-button lg:hidden mr-5">Dashboard</label> */}
