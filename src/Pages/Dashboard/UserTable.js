@@ -10,10 +10,17 @@ const UserTable = ({ user, index, refetch }) => {
                 'authorization': `Bearer ${localStorage.getItem('accessToken ')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('You have to be an admin to make user admin')
+                }
+                return res.json()
+            })
             .then(data => {
-                refetch()
-                toast.success('New Admin added!')
+                if (data.modifiedCount > 0) {
+                    refetch()
+                    toast.success('New Admin added!')
+                }
             })
     }
     return (
