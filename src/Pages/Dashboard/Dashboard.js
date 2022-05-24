@@ -21,6 +21,7 @@ const Dashboard = () => {
                     <li className='bg-neutral rounded-lg mb-5 mt-6 text-white text-xl' ><Link to='/dashboard'>User Profile</Link></li>
                     <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/addReview'>Add Reviews</Link></li>
                     <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/myOrders'>My Orders</Link></li>
+                    <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/users'>All Users</Link></li>
                 </ul>
 
             </div>
