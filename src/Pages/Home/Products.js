@@ -6,7 +6,7 @@ import DisplayProducts from './DisplayProducts';
 const Products = () => {
     // const [product, setProduct] = useState()
 
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products')
+    const { data: products, isLoading, } = useQuery('products', () => fetch('http://localhost:5000/products')
         .then(res => res.json()))
 
     if (isLoading) {
@@ -14,7 +14,7 @@ const Products = () => {
     }
     return (
         <div>
-            <p className='text-4xl  my-14 text-secondary text-center my-5'> Product Display Section:</p>
+            <p className='text-4xl  my-14 text-secondary text-center'> Product Display Section:</p>
 
             {
                 products?.slice(0, 3).map(product => <DisplayProducts

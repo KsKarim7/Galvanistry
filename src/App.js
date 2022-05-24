@@ -15,6 +15,8 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
+import Footer from './Pages/Shared/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
 
         <Route path='*' element={<NotFound />}></Route>
       </Routes >
+      <Footer />
+      <ToastContainer />
     </>
   );
 }

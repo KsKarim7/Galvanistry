@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
@@ -6,6 +6,10 @@ import auth from '../../firebase.init';
 
 const AddReview = () => {
     const { register, handleSubmit } = useForm();
+    const [rating, setRating] = useState()
+    const handleRating = e => {
+        setRating(e.target.value)
+    }
     const onSubmit = data => {
         console.log(data)
         const url = `http://localhost:5000/user`;
@@ -39,8 +43,8 @@ const AddReview = () => {
 
                 {/* <input type="number" placeholder="Rating" {...register("rating", { min: 1, max: 5 })} /> */}
 
-                <div class="rating rating-xl gap-2" {...register("rating")}>
-                    <input type="radio" name="rating-6" value='1' class="mask mask-star-2 bg-pink-500" checked />
+                <div onChange={handleRating} class="rating rating-xl gap-2" {...register("rating")}>
+                    <input type="radio" name="rating-6" value='1' class="mask mask-star-2 bg-pink-500" />
                     <input type="radio" name="rating-6" value='2' class="mask mask-star-2 bg-pink-500" />
                     <input type="radio" name="rating-6" value='3' class="mask mask-star-2 bg-pink-500" />
                     <input type="radio" name="rating-6" value='4' class="mask mask-star-2 bg-pink-500" />
@@ -48,8 +52,8 @@ const AddReview = () => {
                 </div>
 
                 <input className='btn btn-primary text-2xl w-48 h-14 mt-6' type="submit" />
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 
