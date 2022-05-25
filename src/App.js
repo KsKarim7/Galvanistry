@@ -8,10 +8,10 @@ import ScrollToTop from './Pages/Shared/ScrollToTop';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import SignUp from './Pages/Login/SignUp';
 import Checkout from './Pages/Checkout/Checkout';
-import Order from './Pages/Checkout/Order';
 import Blogs from './Pages/Others/Blogs';
 import Portfolio from './Pages/Others/Portfolio';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
@@ -38,7 +38,9 @@ function App() {
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='myOrders' element={<MyOrders />}></Route>
           <Route path='users' element={<Users />}></Route>
-          <Route path='manage' element={<ManageProducts />}></Route>
+          <Route path='manage' element={<RequireAdmin>
+            <ManageProducts />
+          </RequireAdmin>}></Route>
         </Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>

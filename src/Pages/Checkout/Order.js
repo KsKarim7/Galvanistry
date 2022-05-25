@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
 
 const Order = ({ item }) => {
+    // const quantityRef = useRef('')
+    const [totalCost, setTotalCost] = useState()
     const { register, formState: { errors }, handleSubmit } = useForm({
         criteriaMode: "all"
     });;
-    // let errorElement;
-    // const [quantity, setQuantity] = useState()
+    const handleQuantityCost = e => {
+        const quantityNumber = parseInt(e.input.value);
+        console.log(quantityNumber)
+        const totalCost = quantityNumber * item.price
+        setTotalCost(totalCost)
+
+
+    }
+
+
+
     const [user] = useAuthState(auth)
     // console.log(user)
     const onSubmit = data => {
-        // console.log(data)
         const url = 'http://localhost:5000/order';
         fetch(url, {
             method: "POST",
@@ -26,24 +36,14 @@ const Order = ({ item }) => {
                 console.log(data)
             })
     };
-    // const handleQuantity = e => {
-    //     console.log(e)
-    //     setQuantity(e.target.value)
-    //     const quantity = parseFloat(e.current.value)
-    //     if (quantity < 500) {
-    //         toast('Error')
-    //     }
-    // }
-    // if (errors) {
-    //     errorElement = <p className='text-danger'>Error: {errors.message}</p>
-    // }
+
 
 
 
     return (
-        <div className='form mt-44 bg-primary w-50 mx-auto'>
+        <div className='form mt-44 bg-primary w-50 mx-auto rounded-2xl '>
             <h2 className='text-center text-white text-3xl py-6'>Confirm Your Order </h2>
-            <form className='grid gap-4 ' onSubmit={handleSubmit(onSubmit)}>
+            <form className='grid gap-4  ' onSubmit={handleSubmit(onSubmit)}>
 
                 <input className='mx-auto w-75  p-2   px-28' value={item.name} readOnly {...register("name", { maxLength: 50 })} />
 
@@ -53,7 +53,7 @@ const Order = ({ item }) => {
 
                 <input placeholder='Address' className='mx-auto w-50  p-2  px-28' {...register("address", { required: true, maxLength: 50 })} />
 
-                <input type="number" defaultValue={item.minimum} placeholder='Number of Quantity' className='mx-auto w-50  p-2  px-28' {...register("quantity", {
+                <input onChange={handleQuantityCost} type="number" defaultValue={item.minimum} placeholder='Number of Quantity' className='mx-auto w-50  p-2  px-28' {...register("quantity", {
                     required: {
                         value: true,
                         quantity: 'quantity is required'
@@ -74,7 +74,7 @@ const Order = ({ item }) => {
                 </label>
                 <input placeholder='Phone Number' className='mx-auto w-50 p-2   px-28' type="number" {...register("number", { required: true })} />
 
-                {/* <input placeholder='cost' className='mx-auto w-50 p-2   px-28' type="number" {...register("cost", { required: true })} /> */}
+                <input placeholder='cost' value={totalCost} className='mx-auto w-50 p-2   px-28' type="number" {...register("cost",)} />
                 {/* {errors.cost && <p>This field is required</p>} */}
 
                 <input className='btn' type="submit" value="Confirm Order" />

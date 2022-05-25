@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const DisplayProducts = ({ product }) => {
+    // console.log(product)
     const { _id, img, available, minimum, price, name, description } = product
     // console.log(product)
 
