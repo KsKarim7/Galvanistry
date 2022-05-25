@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading'
+import DeleteModal from './DeleteModal';
+import ShowMyOrders from './ShowMyOrders';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+    const [deleteOrder, setDeleteOrder] = useState(null)
 
     useEffect(() => {
         if (user) {
@@ -19,6 +24,12 @@ const MyOrders = () => {
                 .then(data => setOrders(data));
         }
     }, [user])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+
     return (
         <div>
             <h2 className='text-4xl text-secondary mt-8 font-semibold'>All Of my orders</h2>
@@ -38,21 +49,12 @@ const MyOrders = () => {
                     <tbody className=''>
                         {
                             orders.map((order, index) =>
-                                <tr>
-                                    <th>{index + 1}</th>
-                                    <td>{order.myname}</td>
-                                    <td>{order.name}</td>
-                                    <td>{order.quantity}</td>
-                                    <td>{order.email}</td>
-                                    <td>{order.number}</td>
-                                    <td><div className='grid grid-cols-2 place-content-around'>
-                                        <button class="btn mt-1 mr-4 btn-sm h-10 btn-outline btn-primary">Pay</button>
-
-                                        <button class="btn  btn-circle">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                        </button>
-                                    </div></td>
-                                </tr>
+                                <ShowMyOrders
+                                    index={index}
+                                    key={order._id}
+                                    order={order}
+                                    setDeleteOrder={setDeleteOrder}
+                                ></ShowMyOrders>
                             )
                         }
 
@@ -63,6 +65,9 @@ const MyOrders = () => {
                     </tfoot> */}
                 </table>
             </div>
+            {deleteOrder && <DeleteModal deleteOrder={deleteOrder}
+                setDeleteOrder={setDeleteOrder}
+            ></DeleteModal>}
         </div >
     );
 };

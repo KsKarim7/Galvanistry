@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import Loading from '../Shared/Loading/Loading';
@@ -83,6 +83,7 @@ const Login = () => {
                 <div className='divider'>OR</div>
                 <button onClick={() => signInWithGoogle()} className='btn btn-outline'>Login with Google</button>
             </form>
+            <ToastContainer />
         </div>
     );
 };

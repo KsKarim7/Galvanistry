@@ -27,6 +27,7 @@ const Sale = () => {
                     <img src={man} className="rounded-xl shadow-xl" alt='' style={imggStyle} />
                 </div>
             </div>
+
         </div>
     );
 };

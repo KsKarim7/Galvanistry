@@ -16,9 +16,12 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Footer from './Pages/Shared/Footer/Footer';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Users from './Pages/Dashboard/Users';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import Payment from './Pages/Dashboard/Payment';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 function App() {
   return (
@@ -38,8 +41,12 @@ function App() {
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='myOrders' element={<MyOrders />}></Route>
           <Route path='users' element={<Users />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='manage' element={<RequireAdmin>
             <ManageProducts />
+          </RequireAdmin>}></Route>
+          <Route path='addProduct' element={<RequireAdmin>
+            <AddProduct />
           </RequireAdmin>}></Route>
         </Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
