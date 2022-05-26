@@ -23,6 +23,12 @@ const Portfolio = () => {
                     <li className='mt-2 text-2xl'>Basic Back end and Databases</li>
                     <li className='mt-2 text-2xl'> Working with Hosting (Publishing web site)</li>
                 </p>
+                <p className='text-3xl mt-8 '><span className='text-primary'>List of three of my latest projects</span> :
+                    <ul className='mt-2 text-2xl'> https://the-virtual-warehouse.web.app</ul>
+                    <ul className='mt-2 text-2xl'>https://your-life-coach.web.app/</ul>
+                    <ul className='mt-2 text-2xl'>https://tourmaline-bavarois-b79810.netlify.app/home </ul>
+
+                </p>
 
             </div>
         </div>
