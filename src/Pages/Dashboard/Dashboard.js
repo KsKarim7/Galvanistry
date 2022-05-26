@@ -24,8 +24,8 @@ const Dashboard = () => {
                 <ul class="menu  p-4 overflow-y-auto w-64 bg-base-100 border-2 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li className='bg-neutral rounded-lg mb-5 mt-6 text-white text-xl' ><Link to='/dashboard'>User Profile</Link></li>
-                    <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/addReview'>Add Reviews</Link></li>
-                    <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/myOrders'>My Orders</Link></li>
+                    {!admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/addReview'>Add Reviews</Link></li>}
+                    {!admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/myOrders'>My Orders</Link></li>}
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/users'>All Users</Link></li>}
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/manage'>Manage Products</Link></li>}
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/addproduct'>Add Product</Link></li>}

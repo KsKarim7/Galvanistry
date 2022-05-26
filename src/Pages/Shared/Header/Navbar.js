@@ -5,9 +5,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import useAdmin from '../../../Hooks/useAdmin';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user)
 
     const logOut = () => {
         signOut(auth);
