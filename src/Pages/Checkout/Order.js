@@ -1,19 +1,22 @@
 import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Order = ({ item }) => {
     // const quantityRef = useRef('')
-    const [totalCost, setTotalCost] = useState()
+    const [totalCost, setTotalCost] = useState(0)
+    // console.log(totalCost)
     const { register, formState: { errors }, handleSubmit, getValues, setValue, reset } = useForm();
     const handleQuantityCost = e => {
         const quantity = getValues("quantity")
         const grandTotal = quantity * item.price;
+        console.log(grandTotal)
         setTotalCost(grandTotal)
-        reset({
-            data: "cost",
-        })
+        // reset({
+        //     data: "cost",
+        // })
 
 
     }
@@ -33,7 +36,11 @@ const Order = ({ item }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+
+                if (data.acknowledged === true) {
+                    toast.info(`Order of ${item.name} has been placed successfully`)
+
+                }
             })
     };
 
@@ -51,7 +58,7 @@ const Order = ({ item }) => {
 
                 <input value={user?.email} className='mx-auto w-50  p-2  px-28' {...register("email", { required: true })} />
 
-                <input placeholder='Address' className='mx-auto w-50  p-2  px-28' {...register("address", { required: true, maxLength: 50 })} />
+                <input placeholder='Address' type="text" className='mx-auto w-50  p-2  px-28' {...register("address", { required: true, maxLength: 50 })} />
 
                 <input readOnly defaultValue={item.price} className='mx-auto w-50  p-2  px-28' {...register("price",)} />
 
@@ -75,8 +82,8 @@ const Order = ({ item }) => {
                     {errors.quantity?.type === 'min' && <span className='label-text-alt text-neutral  mx-auto text-xl'>{errors.quantity.message}</span>}
                 </label>
                 <input placeholder='Phone Number' className='mx-auto w-50 p-2   px-28' type="number" {...register("number", { required: true })} />
-
-                <input defaultValue={totalCost} className='mx-auto w-50 p-2   px-28' type="number" {...register("cost")} />
+                <h2 className='text-center text-white text-2xl'>Click below here to get the total cost of your products</h2>
+                <input placeholder='Total Cost' value={totalCost} className='mx-auto w-50 p-2   px-28' type="number" {...register("cost")} />
 
                 {/* {errors.cost && <p>This field is required</p>} */}
 

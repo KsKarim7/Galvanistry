@@ -23,8 +23,10 @@ const Payment = () => {
 
             <div class="card w-96 max-w-md bg-base-100 shadow-xl ">
                 <div class="card-body">
+                    <h2 class="card-title font-semibold ">Hello, <span className='uppercase text-primary'>{product.myname}</span></h2>
                     <h2 class="card-title">You are paying for : {product.name}</h2>
-                    <p>Money is not refundable once it is paid</p>
+                    <h2 class="card-title">Your Total Cost: ${product.cost}</h2>
+                    <p>Disclaimer: Money is not refundable once it is paid</p>
 
                 </div>
             </div>

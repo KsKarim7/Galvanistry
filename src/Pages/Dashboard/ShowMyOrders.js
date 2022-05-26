@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 
 const ShowMyOrders = ({ order, index, setDeleteOrder }) => {
-    const { _id, myname, name, quantity, email, number } = order
+    const { myname, name, quantity, email, number, cost } = order
+    // console.log(order)
 
 
     return (
@@ -12,6 +13,8 @@ const ShowMyOrders = ({ order, index, setDeleteOrder }) => {
             <td>{myname}</td>
             <td>{name}</td>
             <td>{quantity}</td>
+            <td>$ {cost}</td>
+            {/* {order?.cost && <td>{order?.cost}</td>} */}
             <td>{email}</td>
             <td>{number}</td>
             <td><div className='grid grid-cols-2 place-content-around'>
@@ -22,7 +25,7 @@ const ShowMyOrders = ({ order, index, setDeleteOrder }) => {
 
 
                 </div>
-                {(order.price && !order?.paid) && <Link to={`/dashboard/payment/${order._id}`}><button class="btn mt-1 mr-4 btn-sm h-10 btn-outline btn-primary">Pay</button></Link>}
+                {(order.cost && !order?.paid) && <Link to={`/dashboard/payment/${order._id}`}><button class="btn mt-1 mr-4 btn-sm h-10 btn-outline btn-primary">Pay</button></Link>}
                 {(order.price && order.paid) && <span class="btn mt-1 mr-4 btn-sm h-10  btn-primary">Paid</span>}
 
             </div></td>

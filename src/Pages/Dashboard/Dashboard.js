@@ -29,6 +29,7 @@ const Dashboard = () => {
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/users'>All Users</Link></li>}
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/manage'>Manage Products</Link></li>}
                     {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/addproduct'>Add Product</Link></li>}
+                    {admin && <li className='bg-neutral rounded-lg mb-5 text-white text-xl'><Link to='/dashboard/manageOrders'>Manage Orders</Link></li>}
                 </ul>
 
             </div>

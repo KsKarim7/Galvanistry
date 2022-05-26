@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
-    const { register, formState: { errors }, handleSubmit, getValues, setValue, reset } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = data => {
         console.log(data)
@@ -21,7 +21,7 @@ const AddProduct = () => {
     };
     return (
         <div className='form mt-44 bg-primary w-50 mx-auto rounded-2xl '>
-            <h2 className='text-center text-white text-3xl py-6'>Confirm Your Order </h2>
+            <h2 className='text-center text-white text-3xl py-6'>Add Product</h2>
             <form className='grid gap-4  ' onSubmit={handleSubmit(onSubmit)}>
 
                 <input className='mx-auto w-75  p-2   px-28' readOnly {...register("name", { maxLength: 50 })} />
