@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
@@ -69,21 +69,25 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h3 class="text-xl text-secondary text-ellipsis text-center my-5 font-bold">Login to your Account</h3>
-            <form onSubmit={handleLogin} action="" className='justify-items-center gap-4 grid grid-cols-1 '>
-                <input onBlur={handleEmailBlur} type="email" placeholder="Enter your email " class="input input-bordered w-full max-w-xs" />
-                <input onBlur={handlePasswordBlur} type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" />
-                {loginError}
-                <p className=' text-neutral ml-24'>
-                    Forget Password?  <button onClick={resetPassword} className=' text-primary pl-1 font-bold '>Reset Password</button>
-                </p>
-                <input type="submit" value='Login' class="input input-bordered bg-secondary text-white font-bold text-xl w-full max-w-xs" />
-                {/* <button className='btn btn-secondary  text-white font-bold text-xl w-full max-w-xs'>Login</button> */}
-                <div className='divider'>OR</div>
-                <button onClick={() => signInWithGoogle()} className='btn btn-outline'>Login with Google</button>
-            </form>
-            <ToastContainer />
+        <div className='flex-1 align-middle'>
+            <div>
+                <h3 class="text-xl text-secondary text-ellipsis text-center my-5 font-bold">Login to your Account</h3>
+                <form onSubmit={handleLogin} action="" className='justify-items-center gap-4 grid grid-cols-1 '>
+                    <input onBlur={handleEmailBlur} type="email" placeholder="Enter your email " class="input input-bordered w-full max-w-xs" />
+                    <input onBlur={handlePasswordBlur} type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" />
+                    {loginError}
+                    <p className=' text-neutral ml-24'>
+                        Are you new here? <Link to='/signup' className=' text-primary pl-1 font-bold '>Sign Up</Link>
+                    </p>
+                    <p className=' text-neutral ml-24'>
+                        Forget Password?  <button onClick={resetPassword} className=' text-primary pl-1 font-bold '>Reset Password</button>
+                    </p>
+                    <input type="submit" value='Login' class="input input-bordered bg-secondary text-white font-bold text-xl w-full max-w-xs" />
+                    {/* <button className='btn btn-secondary  text-white font-bold text-xl w-full max-w-xs'>Login</button> */}
+                    <div className='divider'>OR</div>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-outline'>Login with Google</button>
+                </form>
+            </div>
         </div>
     );
 };

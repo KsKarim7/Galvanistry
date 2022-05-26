@@ -23,10 +23,9 @@ const ManageOrder = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
-                            <th>Email</th>
-                            <th>Cell no.</th>
                             <th>Payment State</th>
                         </tr>
                     </thead>
