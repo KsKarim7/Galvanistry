@@ -6,7 +6,7 @@ import ShowManageProducts from './ShowManageProducts';
 
 const ManageProducts = () => {
     const [deleteManageProduct, setDeleteManageProduct] = useState(null)
-    const { data: manage, isLoading, refetch } = useQuery('manage', () => fetch('http://localhost:5000/manage', {
+    const { data: manage, isLoading, refetch } = useQuery('manage', () => fetch(' https://tranquil-retreat-22940.herokuapp.com/manage', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

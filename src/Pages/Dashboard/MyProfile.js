@@ -9,7 +9,7 @@ const MyProfile = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url = 'http://localhost:5000/profile';
+        const url = ' https://tranquil-retreat-22940.herokuapp.com/profile';
         fetch(url, {
             method: "POST",
             headers: {

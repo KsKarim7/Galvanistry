@@ -33,7 +33,7 @@ const AddProduct = () => {
 
                     }
 
-                    const url = 'http://localhost:5000/product';
+                    const url = ' https://tranquil-retreat-22940.herokuapp.com/product';
                     fetch(url, {
                         method: "POST",
                         headers: {

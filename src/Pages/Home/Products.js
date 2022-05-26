@@ -6,7 +6,7 @@ import DisplayProducts from './DisplayProducts';
 const Products = () => {
     // const [product, setProduct] = useState()
 
-    const { data: products, isLoading, } = useQuery('products', () => fetch('http://localhost:5000/products')
+    const { data: products, isLoading, } = useQuery('products', () => fetch(' https://tranquil-retreat-22940.herokuapp.com/products')
         .then(res => res.json()))
 
     if (isLoading) {

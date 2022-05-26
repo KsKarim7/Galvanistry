@@ -5,7 +5,7 @@ const DeleteManageProductModal = ({ deleteManageProduct, refetch, setDeleteManag
     const { name, _id } = deleteManageProduct
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/manage/${_id}`, {
+        fetch(` https://tranquil-retreat-22940.herokuapp.com/manage/${_id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -13,7 +13,7 @@ const AddReview = () => {
     }
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/user`;
+        const url = ` https://tranquil-retreat-22940.herokuapp.com/user`;
         fetch(url, {
             method: "POST",
             headers: {

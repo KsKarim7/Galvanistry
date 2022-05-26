@@ -5,7 +5,7 @@ const DeleteModal = ({ deleteOrder, setDeleteOrder }) => {
     const { name, _id } = deleteOrder;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(` https://tranquil-retreat-22940.herokuapp.com/order/${_id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

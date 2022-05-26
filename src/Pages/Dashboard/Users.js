@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import UserTable from './UserTable';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(' https://tranquil-retreat-22940.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

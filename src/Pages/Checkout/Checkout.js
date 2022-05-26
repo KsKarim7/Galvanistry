@@ -9,7 +9,7 @@ const Checkout = () => {
     // const [product, setProduct] = useState({})
     // console.log(product)
 
-    const url = `http://localhost:5000/products/${id}`;
+    const url = ` https://tranquil-retreat-22940.herokuapp.com/products/${id}`;
 
     const { data: item, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
@@ -26,7 +26,7 @@ const Checkout = () => {
 
 
     // useEffect(() => {
-    //     const url = `http://localhost:5000/products/${id}`;
+    //     const url = ` https://tranquil-retreat-22940.herokuapp.com/products/${id}`;
 
     //         fetch(url)
     //             .then(res => res.json())

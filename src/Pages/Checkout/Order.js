@@ -26,7 +26,7 @@ const Order = ({ item }) => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         console.log(data)
-        const url = 'http://localhost:5000/order';
+        const url = ' https://tranquil-retreat-22940.herokuapp.com/order';
         fetch(url, {
             method: "POST",
             headers: {
