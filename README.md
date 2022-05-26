@@ -1,5 +1,18 @@
 # Getting Started with Create React App
 
+Website Name:Galvanistry
+
+Live Site Link:
+
+
+A short description about the site:
+
+- This is a galvanometer manufacture company site.  
+- We (galvanistry) sell galvanometer all over the world in a whole sell price .
+- User can simply visit your site and  order his desired product form anywhere of the world with digital payment method .
+- We design and product all modern days galvanometer .
+- User's interactions in the site will be secured jwt authorization.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +81,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+List of technologies that I have used in my project:
+
+React - A Javascript library
+
+React Router - Routing Library for react
+
+Bootstrap,  tailwind - Css framework
+
+Daisy ui - a component library of tailwind
+
+React-hook-form
+
+React-query
+
+Firebase - For Authentication system of the site
+
+React-Firebase-Hook
+
+Font awesome - For Icons
+
+cors - to run my servers in two different ports
+
+mongodb - database
+
+JWT - for user authorization
+
+express - node.js framework
+
+React Toastify
+
