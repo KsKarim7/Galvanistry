@@ -59,7 +59,7 @@ const Login = () => {
 
     let loginError;
     if (error || gError || rError) {
-        loginError = <p className='text-red-500'><small>{error.message || gError?.message}</small></p>
+        loginError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
     if (loading || gLoading || sending) {
         return <Loading></Loading>
