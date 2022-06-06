@@ -16,7 +16,7 @@ const CheckoutForm = ({ product }) => {
 
 
     useEffect(() => {
-        fetch(' https://tranquil-retreat-22940.herokuapp.com/create-payment-intent', {
+        fetch('https://tranquil-retreat-22940.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

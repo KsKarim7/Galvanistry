@@ -3,9 +3,9 @@ import me from '../../img/me.png'
 
 const OurStats = () => {
     return (
-        <div className='grid my-28 font-mono'>
-            <p className='text-5xl mb-16 text-neutral text-center'>A Glance at our Stats:</p>
-            <div class="stats shadow bg-white-400 container ml-20 text-center h-100" style={{ height: '200px' }}>
+        <div className='mx-auto my-28 drop-shadow-2xl font-mono'>
+            <p className='text-5xl mb-16 text-primary text-center'>A Glance at our Stats:</p>
+            <div class="stats shadow bg-white-400 container  text-center h-100" style={{ height: '200px' }}>
 
                 <div class="stat">
                     <div class="stat-figure text-neutral">

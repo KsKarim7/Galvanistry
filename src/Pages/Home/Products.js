@@ -14,14 +14,16 @@ const Products = () => {
     }
     return (
         <div>
-            <p className='text-4xl  my-14 text-secondary text-center'> Product Display Section: {products.length}</p>
+            <p className='text-4xl underline  my-14 text-secondary text-center'> Product Display Section</p>
 
-            {
-                products?.slice(0, 3).map(product => <DisplayProducts
-                    key={product._id}
-                    product={product}
-                ></DisplayProducts>)
-            }
+            <div >
+                {
+                    products?.slice(0, 3).map(product => <DisplayProducts
+                        key={product._id}
+                        product={product}
+                    ></DisplayProducts>)
+                }
+            </div>
         </div>
     );
 };

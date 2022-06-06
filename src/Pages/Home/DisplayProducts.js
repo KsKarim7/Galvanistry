@@ -11,20 +11,21 @@ const DisplayProducts = ({ product }) => {
     const navigateToCheckout = id => {
         navigate(`/product/${id}`)
     }
+
     return (
         <Container>
-            <div class="card ml-48 my-10 card-side bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Name:  {name}</h2>
+            <div class=" card my-10 lg:card-side bg-base-200 shadow-xl ">
+                <div class="card-body w-10/12">
+                    <h2 class="card-title"><span className=' text-2xl '>Name:</span>  {name}</h2>
                     <p>{description}</p>
-                    <p>Available item quantity:{available}</p>
-                    <p>Minimum order quantity:{minimum}</p>
-                    <p>Per unit price: ${price}</p>
-                    <div class="card-actions justify-end">
+                    <p><span className='font-semibold text-xl '>Available item quantity: </span>{available}</p>
+                    <p><span className='font-semibold text-xl '>Minimum order quantity: </span>{minimum}</p>
+                    <p><span className='font-semibold text-xl '>Per unit price:</span> ${price}</p>
+                    <div class="card-actions justify-start">
                         <button onClick={() => navigateToCheckout(_id)} class="btn btn-primary">Order Now</button>
                     </div>
                 </div>
-                <figure><img src={img} alt="" /></figure>
+                <figure className=''><img src={img} alt="" /></figure>
             </div>
         </Container>
     );
