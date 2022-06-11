@@ -7,11 +7,14 @@ Live Site Link:https://assignment-12-preparation.web.app/
 
 A short description about the site:
 
-- This is a galvanometer manufacture company site.  
+- This is a galvanometer manufacturee company site.  
+- Two way authentication system implement for both user and admin.  
+- End to end authorization by JWT for both admin and user  
 - We (galvanistry) sell galvanometer all over the world in a whole sell price .
 - User can simply visit your site and  order his desired product form anywhere of the world with digital payment method .
-- We design and product all modern days galvanometer .
-- User's interactions in the site will be secured jwt authorization.
+- Payment gateway infrastructure implemented for user by stripe.
+- User can order a product,buy a product and admin can add a new product when it is available in the inventory.
+- Extra secured Admin routes can only be accessed by admin.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
