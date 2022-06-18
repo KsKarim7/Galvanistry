@@ -53,10 +53,10 @@ const Navbar = () => {
                 <Link to='/' class=" navbar-center btn btn-neutral text-indigo-200 btn-ghost normal-case text-4xl font-semibold">Galvanistry</Link>
             </div>
             <div class="navbar-end  mr-5">
-                <Link className='text-neutral mr-4 font-bold uppercase' to='/portfolio'><FontAwesomeIcon className='text-4xl' icon={faUser}></FontAwesomeIcon><span className='text-indigo-200 ml-2 text-xl' > {user?.displayName}</span></Link>
+                <Link className='text-neutral mr-4 font-bold uppercase' to='/portfolio'><span className='text-indigo-200 ml-2' > {user?.displayName}</span></Link>
 
                 {
-                    user ? <button onClick={logOut} className='btn btn-neutral'>Log Out</button> : <Link className='btn btn-neutral' to='/login'>Login</Link>
+                    user ? <button onClick={logOut} className='btn btn-neutral'>Log Out<FontAwesomeIcon className='text-2xl pb-2 pl-1' icon={faUser}></FontAwesomeIcon></button> : <Link className='btn btn-neutral' to='/login'>Login</Link>
                 }
             </div>
         </div>

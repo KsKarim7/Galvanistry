@@ -4,8 +4,6 @@ import Loading from '../Shared/Loading/Loading';
 import DisplayProducts from './DisplayProducts';
 
 const Products = () => {
-    // const [product, setProduct] = useState()
-
     const { data: products, isLoading, } = useQuery('products', () => fetch(' https://tranquil-retreat-22940.herokuapp.com/products')
         .then(res => res.json()))
 
@@ -14,7 +12,7 @@ const Products = () => {
     }
     return (
         <div>
-            <p className='text-4xl underline  my-14 text-secondary text-center'> Product Display Section</p>
+            <p className='text-5xl font-semibold  my-20 text-secondary text-center'> Product Display Section</p>
 
             <div >
                 {
