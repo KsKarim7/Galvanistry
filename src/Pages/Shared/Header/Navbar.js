@@ -18,51 +18,9 @@ const Navbar = () => {
         localStorage.removeItem('accessToken')
     }
 
-    // mobile nav
-    // const [click, setClick] = useState(false)
-    // const handleClick = () => setClick(!click)
-
-    // const [color, setColor] = useState(false)
-    // const changeColor = () => {
-    //     if (window.scrollY >= 60) {
-    //         setColor(true)
-    //     }
-    //     else {
-    //         setColor(false)
-    //     }
-    // }
-    // window.addEventListener('scroll', changeColor)
-
-    // close menu on click 
-    // const closeMenu = () => setClick(false)
     return (
-        // <div className={color ? 'header header-bg' : 'header'}>
-        //     <nav className='navbar'>
-        //         {/* <a href='/' className='logo'>
-        //             <img src={logo} alt='logo' />
-        //         </a> */}
-        //         <Link to='/' className='text-2xl  text-indigo-100  '>Galvanistry</Link>
-        //         <div className='hamburger' onClick={handleClick}>
-        //             {click ? (<FaTimes size={30} style={{ color: '#ffffff' }} />)
-        //                 : (<FaBars size={30} style={{ color: '#ffffff' }} />)}
 
-        //         </div>
-        //         <ul className={click ? "nav-menu active" : "nav-menu"}>
-        //             <li className='nav-item'>
-        //                 <a href='/' onClick={closeMenu}>Home</a>
-        //             </li>
-        //             <li className='nav-item'>
-        //                 <a href='#about' onClick={closeMenu}>About</a>
-        //             </li>
-        //             <li className='nav-item'>
-        //                 <a href='#testimonials' onClick={closeMenu}>Testimonials</a>
-        //             </li>
-        //             <li className='nav-item'>
-        //                 <a href='#demo' onClick={closeMenu}>Demo</a>
-        //             </li>
-        //         </ul>
-        //     </nav>
-        <div className='navbar  bg-primary' style={{ height: '10px' }}>
+        <div className='navbar nav  bg-primary' style={{ height: '10px' }}>
             <div className="navbar-start">
                 <div className="dropdown ">
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52">
