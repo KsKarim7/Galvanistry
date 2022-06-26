@@ -23,19 +23,19 @@ const DeleteModal = ({ deleteOrder, setDeleteOrder }) => {
     return (
         <div>
 
-            {/* <label for="delete-modal" class="btn modal-button">open modal</label> */}
+            {/* <label for="delete-modal" className="btn modal-button">open modal</label> */}
 
 
-            <input type="checkbox" id="delete-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg text-primary"> To delete {name} from your orders press "Confirm"!</h3>
+            <input type="checkbox" id="delete-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-primary"> To delete {name} from your orders press "Confirm"!</h3>
 
-                    <div class="modal-action">
-                        <button onClick={() => handleDelete(_id)} class="btn   btn-primary">
+                    <div className="modal-action">
+                        <button onClick={() => handleDelete(_id)} className="btn   btn-primary">
                             Confirm
                         </button>
-                        <label for="delete-modal" class="btn">Cancel</label>
+                        <label for="delete-modal" className="btn">Cancel</label>
                     </div>
                 </div>
             </div>

@@ -17,8 +17,8 @@ const ManageOrder = () => {
     return (
         <div>
             <h2 className='text-4xl text-secondary my-10 font-semibold'>Orders Management</h2>
-            <div class="overflow-x-auto mt-10  ">
-                <table class="table   w-full table-normal ">
+            <div className="overflow-x-auto mt-10  ">
+                <table className="table   w-full table-normal ">
                     <thead >
                         <tr>
                             <th></th>

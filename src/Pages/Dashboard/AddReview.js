@@ -45,12 +45,12 @@ const AddReview = () => {
 
                 {/* <input type="number" placeholder="Rating" {...register("rating", { min: 1, max: 5 })} /> */}
 
-                <div onSelect={handleRating} class="rating rating-xl gap-2" {...register("rating")}>
-                    <input type="radio" name="rating-6" value={rating} class="mask mask-star-2 bg-pink-500" />
-                    <input type="radio" name="rating-6" value={rating} class="mask mask-star-2 bg-pink-500" checked />
-                    <input type="radio" name="rating-6" value={rating} class="mask mask-star-2 bg-pink-500" />
-                    <input type="radio" name="rating-6" value={rating} class="mask mask-star-2 bg-pink-500" />
-                    <input type="radio" name="rating-6" value={rating} class="mask mask-star-2 bg-pink-500" />
+                <div onSelect={handleRating} className="rating rating-xl gap-2" {...register("rating")}>
+                    <input type="radio" name="rating-6" value={rating} className="mask mask-star-2 bg-pink-500" />
+                    <input type="radio" name="rating-6" value={rating} className="mask mask-star-2 bg-pink-500" checked />
+                    <input type="radio" name="rating-6" value={rating} className="mask mask-star-2 bg-pink-500" />
+                    <input type="radio" name="rating-6" value={rating} className="mask mask-star-2 bg-pink-500" />
+                    <input type="radio" name="rating-6" value={rating} className="mask mask-star-2 bg-pink-500" />
                 </div>
 
 

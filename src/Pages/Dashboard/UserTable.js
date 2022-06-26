@@ -28,10 +28,10 @@ const UserTable = ({ user, index, refetch }) => {
             <th>{index + 1}</th>
             <td>{email}</td>
             <td>
-                {role !== 'admin' && <button onClick={makeAdmin} class="btn  btn-sm h-10 btn-outline btn-primary">Make Admin</button>}
+                {role !== 'admin' && <button onClick={makeAdmin} className="btn  btn-sm h-10 btn-outline btn-primary">Make Admin</button>}
             </td>
-            <td className='text-center'><button class="btn btn-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            <td className='text-center'><button className="btn btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button></td>
         </tr>
     );

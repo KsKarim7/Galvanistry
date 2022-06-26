@@ -71,10 +71,10 @@ const Login = () => {
     return (
         <div className='flex-1 align-middle'>
             <div>
-                <h3 class="text-xl text-secondary text-ellipsis text-center my-5 font-bold">Login to your Account</h3>
+                <h3 className="text-xl text-secondary text-ellipsis text-center my-5 font-bold">Login to your Account</h3>
                 <form onSubmit={handleLogin} action="" className='justify-items-center gap-4 grid grid-cols-1 '>
-                    <input onBlur={handleEmailBlur} type="email" placeholder="Enter your email " class="input input-bordered w-full max-w-xs" />
-                    <input onBlur={handlePasswordBlur} type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" />
+                    <input onBlur={handleEmailBlur} type="email" placeholder="Enter your email " className="input input-bordered w-full max-w-xs" />
+                    <input onBlur={handlePasswordBlur} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
                     {loginError}
                     <p className=' text-neutral ml-24'>
                         Are you new here? <Link to='/signup' className=' text-primary pl-1 font-bold '>Sign Up</Link>
@@ -82,7 +82,7 @@ const Login = () => {
                     <p className=' text-neutral ml-24'>
                         Forget Password?  <button onClick={resetPassword} className=' text-primary pl-1 font-bold '>Reset Password</button>
                     </p>
-                    <input type="submit" value='Login' class="input input-bordered bg-secondary text-white font-bold text-xl w-full max-w-xs" />
+                    <input type="submit" value='Login' className="input input-bordered bg-secondary text-white font-bold text-xl w-full max-w-xs" />
                     {/* <button className='btn btn-secondary  text-white font-bold text-xl w-full max-w-xs'>Login</button> */}
                     <div className='divider'>OR</div>
                     <button onClick={() => signInWithGoogle()} className='btn btn-outline'>Login with Google</button>

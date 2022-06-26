@@ -16,8 +16,8 @@ const Review = () => {
 
     return (
         <div>
-            <p className='text-5xl font-semibold  my-14 text-secondary text-center'> Some words from our beloved customers</p>
-            <div className='grid justify-items-center lg:grid-cols-3 sm:grid-cols-2 sm:max-h-max  gap-4 my-28'>
+            <p className='text-4xl font-semibold   text-secondary text-center'> Some words from our beloved customers</p>
+            <div className='grid justify-items-center lg:grid-cols-3 sm:grid-cols-2 sm:max-h-max  gap-4 my-20'>
 
                 {
                     reviews.map(rate => <ShowReview

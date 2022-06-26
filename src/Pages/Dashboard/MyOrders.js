@@ -33,8 +33,8 @@ const MyOrders = () => {
     return (
         <div>
             <h2 className='text-4xl text-secondary mt-8 font-semibold'>All Of my orders</h2>
-            <div class="overflow-x-auto mt-10  ">
-                <table class="table   w-full table-normal ">
+            <div className="overflow-x-auto mt-10  ">
+                <table className="table   w-full table-normal ">
                     <thead >
                         <tr>
                             <th></th>

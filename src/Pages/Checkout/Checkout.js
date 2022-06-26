@@ -36,18 +36,18 @@ const Checkout = () => {
         <div className='flex  justify-center'>
 
             <div>
-                <div class="card mt-16 w-100 lg:card-side bg-base-100 shadow-xl">
+                <div className="card mt-16 w-100 lg:card-side bg-base-100 shadow-xl">
                     <figure><img src={item.img} alt={item.name} /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title">{item.name}</h2>
+                    <div className="card-body">
+                        <h2 className="card-title">{item.name}</h2>
                         <p>Available Quantity : {item.available}</p>
                         <p>Avail Warranty For : {item.warranty}year</p>
                         <p>Minimum Order Quantity  : {item.minimum} </p>
                         <p>Each Quantity Price : ${item.price}</p>
                         <p>For Queries Mail us at: {item.email}</p>
                         <p>Visit Us: {item.address}</p>
-                        {/* <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Listen</button>
+                        {/* <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Listen</button>
                     </div> */}
                     </div>
                 </div>
