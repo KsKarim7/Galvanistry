@@ -12,7 +12,7 @@ const Products = () => {
     }
     return (
         <div>
-            <p className='text-5xl font-semibold  my-20 text-secondary text-center'> Product Display Section</p>
+            <p className='text-4xl font-semibold  my-16 text-secondary text-center'> Product Display Section</p>
 
             <div >
                 {
