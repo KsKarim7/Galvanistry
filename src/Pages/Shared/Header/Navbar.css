@@ -1,4 +1,38 @@
-/* .nav {
-    position: fixed;
-    z-index: 1;
-} */
+.nav {
+    height: 32px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bar {
+    display: flex;
+}
+
+.nav-btn {
+    border-radius: 2px;
+    padding: 0px 8px 0px 8px;
+}
+
+.word {
+    /* word-spacing: 16px; */
+    /* font-size: 10px; */
+
+}
+
+.navbar {
+    position: sticky;
+}
+
+.font {
+    /* width: auto; */
+}
+
+@media only screen and (max-width:576px) {
+    .word {
+        /* word-spacing: 16px; */
+        font-size: 10px;
+
+    }
+}
